@@ -49,7 +49,7 @@ int view_cart(){
         printf("                                                                         +==============================================================+\n");
         printf("                                                                         |                      Your Cart Is Empty                      |\n");
         printf("                                                                         +==============================================================+\n");
-        printf("                                                                                                                                            \n");
+        printf("                                                                                                                                          \n");
         printf("                                                                                              Press Enter To Go Back ");
         getchar();
         return 0;
