@@ -276,9 +276,9 @@ int Print_Medicine_page(){
     system("cls");
     printf("                                                                            +==================================================+\n");
     printf("                                                                            |                                                  |\n");
-    printf("                                                                            |                Z E N P H A R M A                |\n");
+    printf("                                                                            |                Z E N P H A R M A                 |\n");
     printf("                                                                            |                                                  |\n");
-    printf("                                                                            |                   MEDICINES                    |\n");
+    printf("                                                                            |                   MEDICINES                      |\n");
     printf("                                                                            |                ------------------                |\n");
     printf("                                                                            |                                                  |\n");
     printf("                                                                            +==================================================+\n");
@@ -305,9 +305,9 @@ int Print_Medical_Accessories(){
     system("cls");
     printf("                                                                            +==================================================+\n"); 
     printf("                                                                            |                                                  |\n"); 
-    printf("                                                                            |                Z E N P H A R M A                |\n"); 
+    printf("                                                                            |                Z E N P H A R M A                 |\n"); 
     printf("                                                                            |                                                  |\n"); 
-    printf("                                                                            |                MEDICAL ACCESSORIES              |\n"); 
+    printf("                                                                            |                MEDICAL ACCESSORIES               |\n"); 
     printf("                                                                            |                ------------------                |\n"); 
     printf("                                                                            |                                                  |\n"); 
     printf("                                                                            +==================================================+\n"); 
@@ -334,9 +334,9 @@ int Print_Skin_Care_Products(){
     system("cls");
     printf("                                                                            +==================================================+\n"); 
     printf("                                                                            |                                                  |\n"); 
-    printf("                                                                            |                Z E N P H A R M A                |\n"); 
+    printf("                                                                            |                Z E N P H A R M A                 |\n"); 
     printf("                                                                            |                                                  |\n"); 
-    printf("                                                                            |                SKIN CARE PRODUCTS               |\n"); 
+    printf("                                                                            |                SKIN CARE PRODUCTS                |\n"); 
     printf("                                                                            |                ------------------                |\n"); 
     printf("                                                                            |                                                  |\n"); 
     printf("                                                                            +==================================================+\n"); 
@@ -366,8 +366,8 @@ int Print_Health_And_Hygiene_Products(){
     printf("                                                                            |                                                  |\n"); 
     printf("                                                                            |                 Z E N P H A R M A                |\n"); 
     printf("                                                                            |                                                  |\n"); 
-    printf("                                                                            |               HEALTH & HYGIENE PRODUCTS         |\n"); 
-    printf("                                                                            |               -------------------------         |\n"); 
+    printf("                                                                            |               HEALTH & HYGIENE PRODUCTS          |\n"); 
+    printf("                                                                            |               -------------------------          |\n"); 
     printf("                                                                            |                                                  |\n"); 
     printf("                                                                            +==================================================+\n"); 
     printf("                                                                            |                                                  |\n"); 
@@ -397,8 +397,8 @@ int Print_Child_Care_Products(){
     printf("                                                                            |                                                  |\n"); 
     printf("                                                                            |                 Z E N P H A R M A                |\n"); 
     printf("                                                                            |                                                  |\n"); 
-    printf("                                                                            |                 CHILD CARE PRODUCTS             |\n"); 
-    printf("                                                                            |             -------------------------         |\n"); 
+    printf("                                                                            |                 CHILD CARE PRODUCTS              |\n"); 
+    printf("                                                                            |             -------------------------            |\n"); 
     printf("                                                                            |                                                  |\n"); 
     printf("                                                                            +==================================================+\n"); 
     printf("                                                                            |                                                  |\n"); 
