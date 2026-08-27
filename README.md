@@ -81,7 +81,6 @@ Feature	Description
 🔒 Secure Logout	Protected session management
 🏗️ System Architecture
 Module Structure
-text
 Group_Project/
 │
 ├── 📄 main.c                 # Application entry point
@@ -120,36 +119,117 @@ Group_Project/
     ├── feedback.txt          # Customer feedback records
     ├── deliverymaninfo.txt   # Deliveryman credentials
     └── about.txt             # Pharmacy information
-🔄 Data Flow Diagram
-text
-┌─────────────────────────────────────────────────────────────────┐
-│                       ZENPHARMA SYSTEM                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌─────────────┐    ┌──────────────┐    ┌──────────────────┐  │
-│  │   ADMIN     │───▶│   PRODUCT    │───▶│    INVENTORY     │  │
-│  │   PORTAL    │    │  MANAGEMENT  │    │    MANAGEMENT    │  │
-│  └─────────────┘    └──────────────┘    └──────────────────┘  │
-│         │                                                      │
-│         ▼                                                      │
-│  ┌─────────────┐    ┌──────────────┐    ┌──────────────────┐  │
-│  │  CUSTOMER   │───▶│    CART      │───▶│     ORDER        │  │
-│  │   PORTAL    │    │   MODULE     │    │    PROCESSING    │  │
-│  └─────────────┘    └──────────────┘    └──────────────────┘  │
-│         │                            │                         │
-│         │                            ▼                         │
-│         │               ┌──────────────────────────┐          │
-│         └──────────────▶│     PAYMENT SYSTEM       │          │
-│                         │  (COD, Bkash, Nagad)     │          │
-│                         └──────────────────────────┘          │
-│                                      │                         │
-│                         ┌────────────▼───────────────┐        │
-│  ┌─────────────────┐   │     DELIVERYMAN PORTAL     │        │
-│  │  FEEDBACK SYSTEM│   │  (Order Assignment &       │        │
-│  │   & REVIEWS     │   │   Status Updates)          │        │
-│  └─────────────────┘   └────────────────────────────┘        │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+    Module Dependencies
+Module	Depends On	Description
+main.c	admin.h, customer.h, deliveryman.h, transaction.h	Entry point, orchestrates all modules
+admin.c	admin.h, product.h, customer.h, transaction.h	Admin operations and management
+customer.c	customer.h, product.h, transaction.h, deliveryman.h	Customer operations and shopping
+product.c	product.h, transaction.h, customer.h	Product CRUD operations
+cart.c	customer.h, transaction.h	Shopping cart management
+order.c	transaction.h, customer.h, product.h, deliveryman.h	Order processing and history
+payment.c	transaction.h, customer.h	Payment gateway integration
+deliveryman.c	deliveryman.h, customer.h, transaction.h, product.h	Delivery operations
+ui.c	product.h	User interface rendering
+
+Data Flow Diagram
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            ZENPHARMA SYSTEM                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────────┐  │
+│  │                  │    │                  │    │                      │  │
+│  │    ADMIN         │───▶│    PRODUCT       │───▶│     INVENTORY        │  │
+│  │    PORTAL        │    │    MANAGEMENT    │    │     MANAGEMENT       │  │
+│  │                  │    │                  │    │                      │  │
+│  └──────────────────┘    └──────────────────┘    └──────────────────────┘  │
+│           │                                                                 │
+│           │                                                                 │
+│           ▼                                                                 │
+│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────────┐  │
+│  │                  │    │                  │    │                      │  │
+│  │    CUSTOMER      │───▶│    CART          │───▶│     ORDER            │  │
+│  │    PORTAL        │    │    MODULE        │    │     PROCESSING       │  │
+│  │                  │    │                  │    │                      │  │
+│  └──────────────────┘    └──────────────────┘    └──────────────────────┘  │
+│           │                            │                                    │
+│           │                            │                                    │
+│           │                            ▼                                    │
+│           │               ┌──────────────────────────┐                     │
+│           │               │                          │                     │
+│           └──────────────▶│    PAYMENT SYSTEM        │                     │
+│                           │    (COD, Bkash, Nagad)   │                     │
+│                           │                          │                     │
+│                           └──────────────────────────┘                     │
+│                                      │                                      │
+│                                      ▼                                      │
+│                           ┌──────────────────────────┐                     │
+│  ┌────────────────────┐  │                          │                     │
+│  │                    │  │    DELIVERYMAN PORTAL     │                     │
+│  │    FEEDBACK        │◀─┤    (Order Assignment &   │                     │
+│  │    SYSTEM          │  │     Status Updates)      │                     │
+│  │                    │  │                          │                     │
+│  └────────────────────┘  └──────────────────────────┘                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+Process Flow
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           PROCESS FLOW                                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ADMIN PANEL                                                                │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐ │
+│  │   LOGIN     │───▶│   ADD       │───▶│   UPDATE    │───▶│   VIEW      │ │
+│  │   (admin)   │    │   PRODUCT   │    │   STOCK     │    │   ORDERS    │ │
+│  └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘ │
+│                                                                             │
+│  CUSTOMER PANEL                                                            │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐ │
+│  │   SIGNUP/   │───▶│   BROWSE    │───▶│   ADD TO    │───▶│   CHECKOUT  │ │
+│  │   LOGIN     │    │   PRODUCTS  │    │   CART      │    │   & PAYMENT │ │
+│  └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘ │
+│         │                                      │                            │
+│         │                                      │                            │
+│         │                                      ▼                            │
+│         │                         ┌─────────────────────┐                  │
+│         └────────────────────────▶│   ORDER HISTORY     │                  │
+│                                   │   & FEEDBACK       │                  │
+│                                   └─────────────────────┘                  │
+│                                                                             │
+│  DELIVERYMAN PANEL                                                         │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                    │
+│  │   LOGIN     │───▶│   VIEW      │───▶│   UPDATE    │                    │
+│  │   (phone &  │    │   ASSIGNED  │    │   ORDER     │                    │
+│  │   password) │    │   ORDERS    │    │   STATUS    │                    │
+│  └─────────────┘    └─────────────┘    └─────────────┘                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+Data Storage Flow
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           DATA STORAGE FLOW                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  INPUT                     PROCESSING                    OUTPUT            │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                    │
+│  │   ADMIN     │    │             │    │             │                    │
+│  │   INPUT     │───▶│  product.c  │───▶│ product.txt │                    │
+│  └─────────────┘    └─────────────┘    └─────────────┘                    │
+│                                                                             │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                    │
+│  │   CUSTOMER  │    │             │    │             │                    │
+│  │   INPUT     │───▶│ customer.c  │───▶│ customer.txt│                    │
+│  └─────────────┘    └─────────────┘    └─────────────┘                    │
+│                                                                             │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                    │
+│  │   ORDER     │    │             │    │             │                    │
+│  │   INPUT     │───▶│  order.c    │───▶│  order.txt  │                    │
+│  └─────────────┘    └─────────────┘    └─────────────┘                    │
+│                                                                             │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                    │
+│  │   FEEDBACK  │    │             │    │             │                    │
+│  │   INPUT     │───▶│ customer.c  │───▶│ feedback.txt│                    │
+│  └─────────────┘    └─────────────┘    └─────────────┘                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 📂 Data Storage
 File Structure & Specifications
 File Name	Purpose	Format
@@ -168,6 +248,43 @@ Data Integrity - Transactional updates with temporary files
 
 Portability - Plain text format for easy backup and migration
 
+Sample Data Records
+Product Record:
+101|NAPA EXTRA|MED|SQUARE|Fever & Pain Relief|31-12-2028|25.00|10|115
+Customer Record:
+Mustaqeem Mashfi|01234567890|mashfi
+Order Record:
+=============================================================
+                        ZENPHARMA
+=============================================================
+Order ID : 1001
+Customer Name : Mustaqeem Mashfi
+Phone Number  : 01234567890
+=============================================================
+                         Products
+=============================================================
+ID    Name                      Qty      Price      Total
+101   NAPA EXTRA                5        25.00      125.00
+=============================================================
+Items Total      : 125.00 Tk
+Delivery Charge  : 60.00 Tk
+Grand Total      : 185.00 Tk
+Payment Method   : Cash On Delivery
+=============================================================
+               Delivery Address
+=============================================================
+District    : DHAKA
+Area        : Mohakhali
+House/Road  : 96/A
+=============================================================
+               Deliveryman Information
+=============================================================
+Deliveryman ID : 4
+Deliveryman Name : Rafi Islam
+Deliveryman Phone : 01444444444
+Status  : DELIVERED
+=============================================================
+================ END ORDER ================
 🚀 Getting Started
 Prerequisites
 Tool	Version	Purpose
@@ -176,143 +293,8 @@ Terminal/Command Prompt	Any	Running the application
 Git	Latest	Cloning the repository
 Installation & Setup
 1. Clone the Repository
-bash
-git clone https://github.com/DiptoChaklader/Group_Project.git
-cd Group_Project
+   git clone https://github.com/DiptoChaklader/Group_Project.gitcd Group_Project
 2. Compile the Project
-Using GCC:
-
-bash
-gcc -o zenpharma main.c admin.c customer.c product.c cart.c order.c payment.c deliveryman.c ui.c
-Using Make (if available):
-
-bash
-make
-3. Run the Application
-bash
-./zenpharma        # On Linux/Mac
-zenpharma.exe      # On Windows
-🔑 Default Credentials
-Role	Username	Password
-Admin	admin	1234
-Deliveryman	1234 (Phone)	1234 (Password)
-📖 Usage Guide
-👤 Customer Workflow
-Browse Products
-
-Navigate through categories (MED/ACC/SKN/HH/CC)
-
-View product details and pricing
-
-Account Management
-
-Sign up with phone number and password
-
-Login to access personalized features
-
-Shopping Experience
-
-Search products by ID or name
-
-Add products to cart
-
-Update quantity or remove items
-
-Checkout Process
-
-Enter delivery address (District, Area, House/Road)
-
-Choose payment method (COD, Bkash, Nagad)
-
-Confirm order and receive receipt
-
-Post-Purchase
-
-View order history
-
-Submit feedback and reviews
-
-Track delivery status
-
-🔐 Admin Workflow
-Product Management
-
-Add new products with complete details
-
-Update existing product information
-
-Delete products from inventory
-
-Monitor and update stock levels
-
-Order Management
-
-View all customer orders
-
-Track order statuses
-
-Monitor delivery assignments
-
-System Administration
-
-Review customer feedback
-
-Update pharmacy information
-
-Manage system operations
-
-🚚 Deliveryman Workflow
-Order Management
-
-View assigned orders
-
-Check delivery details
-
-Update order status to DELIVERED
-
-Account Management
-
-Secure login with credentials
-
-Logout when finished
-
-👥 Contributors
-Contributor	Role	Contact
-Dipto Chaklader	Lead Developer	GitHub
-Mustaqeem Mashfi	Developer	-
-📞 Contact
-Project Links
-GitHub Repository: https://github.com/DiptoChaklader/Group_Project
-
-Issues: Report an Issue
-
-Stars: Star this Project
-
-Developer Contact
-Dipto Chaklader
-
-GitHub: @DiptoChaklader
-
-Email: dipto.chaklader@example.com
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-🙏 Acknowledgments
-SQUARE Pharmaceuticals - Product reference
-
-BEXIMCO Pharmaceuticals - Product reference
-
-Incepta Pharmaceuticals - Product reference
-
-ACI Limited - Product reference
-
-All Contributors - For their valuable contributions
-
-<div align="center">
-🌟 ZenPharma - Your Health, Our Priority 🌟
-Developed with ❤️ using C
-
-Back to Top
-
-</div>
+   Using GCC:
+   gcc -o zenpharma main.c admin.c customer.c product.c cart.c order.c payment.c deliveryman.c ui.c
+   
