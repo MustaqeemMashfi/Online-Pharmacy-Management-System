@@ -35,7 +35,9 @@ int main(){
                                 break;
 
                         case 4:
-                            printf("\n                                                    Thank you For Using Our System\n");
+                            printf("                                                    +================================+\n");
+                            printf("                                                    | Thank you For Using Our System |\n");
+                            printf("                                                    +================================+");
                             exit(0);
 
                         default:
