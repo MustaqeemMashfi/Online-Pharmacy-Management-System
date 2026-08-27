@@ -4,6 +4,9 @@
 #include "customer.h"
 #include "deliveryman.h"
 #include "transaction.h"
+/* 2026-2-60-003 : Customer panel, Delivery man panel, order;
+   2026-2-60-001 : Payment, cart, ui;
+   2026-2-60-021 : admin panel, product; */ 
 
 int main(){
 
