@@ -71,16 +71,16 @@ int view_cart(){
         for(i = 0; i < cart_count; i++)
         {
             printf("                                                 | %-8d %-25s %-12.2f %-10d %-12.2f                                     |\n",
-                    cart[i].product.id,
-                    cart[i].product.name,
-                    cart[i].product.price,
-                    cart[i].quantity,
-                    cart[i].product.price * cart[i].quantity);
-            total += cart[i].product.price * cart[i].quantity;
+                      cart[i].product.id,
+                      cart[i].product.name,
+                      cart[i].product.price,
+                      cart[i].quantity,
+                      cart[i].product.price * cart[i].quantity);
+                      total += cart[i].product.price * cart[i].quantity;
         }
 
         printf("                                                 +-------------------------------------------------------------------------------------------------------------+\n");
-        printf("                                                   Grand Total : %.2f Tk                                                                                       \n", total);
+        printf("                                                 |  Grand Total : %.2f Tk                                                                                       \n", total);
         printf("                                                 +=============================================================================================================+\n");
         printf("                                                                                                                                                                \n");
         printf("                                                                                 +============================+\n");
@@ -90,7 +90,8 @@ int view_cart(){
         printf("                                                                                 | 4. Checkout                |\n");
         printf("                                                                                 | 5. Back                    |\n");
         printf("                                                                                 +============================+\n");
-        printf("\n                                                                                   Enter Your Choice : ");
+        printf("                                                                                                               \n");    
+        printf("                                                                                     Enter Your Choice : ");
         scanf("%d",&choice);
         getchar();
 
@@ -145,6 +146,8 @@ int update_cart_quantity(){
 
     if(id == 0)
     {
+        printf("Please press Enter to continue.");
+        getchar();    
         return 0;
     }
         
@@ -263,8 +266,8 @@ int clear_cart(){
             return 0;
 
         }
-
-        printf("\n                                                    Are You Sure You Want To Clear The Cart? (Y/N) : ");
+        printf("                                                 +========================================================+\n");
+        printf("                                                      Are You Sure You Want To Clear The Cart? (Y/N) : ");
         scanf(" %c", &choice);
         getchar();
 
@@ -300,4 +303,3 @@ int clear_cart(){
 
         return 1;
 }
-
