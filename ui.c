@@ -317,7 +317,7 @@ int Print_Medical_Accessories(){
     printf("                                                                            |        +--------------------------------+        |\n"); 
     printf("                                                                            |                                                  |\n"); 
     printf("                                                                            |        +--------------------------------+        |\n"); 
-    printf("                                                                            |        | [02] Search Accessory          |        |\n"); 
+    printf("                                                                            |        | [02] Search Accessories        |        |\n"); 
     printf("                                                                            |        +--------------------------------+        |\n"); 
     printf("                                                                            |                                                  |\n"); 
     printf("                                                                            |        +--------------------------------+        |\n"); 
