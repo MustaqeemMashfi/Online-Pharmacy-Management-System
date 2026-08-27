@@ -1,489 +1,318 @@
-🌿 ZenPharma - Online Pharmacy Management System
-Enterprise-Grade Console-Based Pharmacy Management Solution
-<div align="center">
-https://img.shields.io/github/repo-size/DiptoChaklader/Group_Project?style=for-the-badge&color=blueviolet
-https://img.shields.io/github/contributors/DiptoChaklader/Group_Project?style=for-the-badge&color=orange
-https://img.shields.io/github/stars/DiptoChaklader/Group_Project?style=for-the-badge&color=yellow
-https://img.shields.io/github/forks/DiptoChaklader/Group_Project?style=for-the-badge&color=success
-https://img.shields.io/github/issues/DiptoChaklader/Group_Project?style=for-the-badge&color=red
-https://img.shields.io/badge/platform-Windows%2520%257C%2520Linux-brightgreen?style=for-the-badge
-https://img.shields.io/badge/language-C-blue?style=for-the-badge&logo=c
-https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge
-https://img.shields.io/badge/version-2.0.0-blue?style=for-the-badge
-https://img.shields.io/badge/build-passing-success?style=for-the-badge
+ZenPharma - Online Pharmacy Management System
+https://img.shields.io/github/repo-size/DiptoChaklader/Group_Project
+https://img.shields.io/github/contributors/DiptoChaklader/Group_Project
+https://img.shields.io/github/stars/DiptoChaklader/Group_Project
+https://img.shields.io/github/issues/DiptoChaklader/Group_Project
+https://img.shields.io/badge/License-MIT-yellow.svg
+https://img.shields.io/badge/Language-C-blue.svg
+https://img.shields.io/badge/Platform-Windows%2520%257C%2520Linux-lightgrey
 
-</div>
 📋 Table of Contents
-📖 Executive Summary
-
 🏥 About ZenPharma
 
-🎯 Core Features
+✨ Features
 
 🏗️ System Architecture
 
-📊 Module Breakdown
+📂 Data Storage
 
-🗂️ Data Management
+🚀 Getting Started
 
-🖥️ User Interface Design
+📖 Usage Guide
 
-🚀 Quick Start Guide
+👥 Contributors
 
-👥 Team Members
+📞 Contact
 
-📞 Support & Contact
-
-📜 License & Legal
-
-📖 Executive Summary
-ZenPharma is a robust, enterprise-grade Pharmacy Management System developed in C Programming Language, designed to streamline pharmaceutical operations through an intuitive console-based interface. The system implements a three-tier architecture with distinct portals for Administrators, Customers, and Delivery Personnel, ensuring seamless management of inventory, orders, and user interactions.
-
-Key Statistics
-Metric	Value
-Total Lines of Code	5,000+
-Modules	8 Core Modules
-Features	30+ Functionalities
-Data Files	6 Structured Files
-User Types	3 Distinct Roles
-Payment Methods	3 Integrated Options
 🏥 About ZenPharma
-Mission Statement
-"To provide a comprehensive, reliable, and user-friendly pharmacy management solution that bridges the gap between pharmaceutical businesses and their customers."
+ZenPharma is a comprehensive Console-Based Pharmacy Management System developed in C that simulates a fully functional online pharmacy platform. The system provides a complete solution for managing pharmaceutical operations with three distinct user portals, demonstrating robust software engineering principles including:
 
-Core Values
-Value	Description
-🏥 Quality	Maintains product integrity through systematic tracking
-🔒 Security	Implements role-based access control
-🚀 Innovation	Console-based modern interface
-💡 Simplicity	User-friendly navigation for all skill levels
-Technology Stack
-Component	Technology	Purpose
-Core Language	C (ANSI C99)	High-performance system logic
-Data Storage	Flat Files (.txt)	Lightweight, portable database
-User Interface	Console/CLI	Cross-platform compatibility
-Authentication	Custom Hash-free	Simple, secure login system
-Build System	GCC/Make	Standard compilation process
-🎯 Core Features
-🔐 Administrator Portal - Full Control Center
-Module	Features	Description
-Product Management	Add Products, View All Products, Search Products, Update Products, Delete Products	Complete CRUD operations for inventory management
-Inventory Control	Stock Updates, Category Filters, Batch Management	Real-time stock level monitoring
-Order Management	View All Orders, Order Analytics, Status Tracking	Comprehensive order monitoring system
-Content Management	Edit About Page, View Feedback, System Updates	Dynamic content management capabilities
-🛒 Customer Portal - Shopping Experience
-Module	Features	Description
-Product Discovery	Browse by Category, Search by Name/ID, Product Details View	Intuitive product exploration
-Shopping Cart	Add to Cart, Update Quantity, Remove Items, Clear Cart	Complete cart management
-Checkout Process	Address Input, Delivery Options, Payment Integration	Streamlined purchase flow
-Order Management	Order History, Order Tracking, Order Receipts	Comprehensive order lifecycle
-Customer Engagement	Give Feedback, View About Page, Account Management	Enhanced customer experience
-🚚 Deliveryman Portal - Order Management
-Module	Features	Description
-Order Management	View Assigned Orders, Order Details, Delivery Route	Organized delivery management
-Status Updates	Update Delivery Status, Track Deliveries, Report Issues	Real-time order status updates
-Account Management	Secure Login, Logout System, Profile View	Secure access control
+Modular Programming with separate header and implementation files
+
+File-Based Data Persistence for reliable data storage
+
+User Authentication & Authorization across all portals
+
+Transaction Management with payment processing
+
+Real-time Inventory Management with stock tracking
+
+🎯 Key Highlights
+Aspect	Description
+Language	C Programming Language
+Data Storage	Plain Text Files (.txt)
+User Roles	Admin, Customer, Deliveryman
+Authentication	Password-protected secure login
+Transaction	Complete order lifecycle management
+UI	Interactive console-based interface
+✨ Features
+🔐 Admin Portal
+Full control over the pharmacy operations
+
+Feature	Description	Access
+📦 Add Product	Add new medicines, accessories, skincare, hygiene, and child care products	Full
+🔍 View Products	Browse products by category (MED/ACC/SKN/HH/CC)	Full
+🔎 Search Products	Search by product ID or name	Full
+✏️ Update Product	Modify existing product details	Full
+📊 Update Stock	Adjust product stock levels in real-time	Full
+🗑️ Delete Product	Remove products from inventory	Full
+💬 View Feedback	Read all customer feedback and reviews	Full
+📋 View Orders	Monitor all placed orders across the system	Full
+📝 Edit About	Update pharmacy information page	Full
+🛒 Customer Portal
+Complete shopping experience with personalized features
+
+Feature	Description	Requirements
+🔍 Browse Products	View products by category with detailed information	None
+🔎 Search Products	Find products by ID or name	None
+🛍️ Add to Cart	Add products to shopping cart	Login Required
+📦 Update Cart	Change quantity or remove items	Login Required
+💳 Checkout	Place orders with delivery address	Login Required
+💰 Multiple Payments	Cash on Delivery, Bkash, Nagad support	Login Required
+📜 Order History	View past orders and status	Login Required
+⭐ Give Feedback	Submit reviews and suggestions	Login Required
+📖 About Pharmacy	View pharmacy information	None
+🚚 Deliveryman Portal
+Efficient order delivery management
+
+Feature	Description
+📋 View Assigned Orders	See all orders assigned to you
+✅ Update Order Status	Mark orders as DELIVERED
+🔒 Secure Logout	Protected session management
 🏗️ System Architecture
-Three-Tier Architecture
-The system follows a clean three-tier architecture pattern:
-
-1. Presentation Layer
-
-Console-based User Interface (CLI)
-
-ASCII art interfaces and menus
-
-Form input handlers and validation
-
-Error message display system
-
-2. Business Logic Layer
-
-Admin Module - Complete system administration
-
-Customer Module - Shopping and order management
-
-Delivery Module - Order fulfillment
-
-Product Module - Inventory management
-
-Cart Module - Shopping operations
-
-Payment Module - Transaction processing
-
-Order Module - Order lifecycle management
-
-3. Data Storage Layer
-
-Product database (product.txt)
-
-Customer database (customer.txt)
-
-Order database (order.txt)
-
-Feedback database (feedback.txt)
-
-Deliveryman database (deliverymaninfo.txt)
-
-About page content (about.txt)
-
-Data Flow Architecture
+Module Structure
 text
-                    ┌─────────────┐
-                    │   ADMIN     │
-                    │   LOGIN     │
-                    └──────┬──────┘
-                           │
-                    ┌──────▼──────┐
-                    │ ADMIN MENU  │
-                    └──────┬──────┘
-                           │
-     ┌─────────────────────┼─────────────────────┐
-     │                     │                     │
-┌────▼────┐         ┌─────▼─────┐         ┌────▼────┐
-│ PRODUCT │         │   ORDER   │         │  SYSTEM │
-│MANAGEMENT│        │ MANAGEMENT│         │  ADMIN  │
-└────┬────┘         └─────┬─────┘         └────┬────┘
-     │                     │                     │
-┌────▼────┐         ┌─────▼─────┐         ┌────▼────┐
-│product. │         │ order.txt │         │ about.  │
-│  txt    │         │           │         │  txt    │
-└─────────┘         └───────────┘         └─────────┘
+Group_Project/
+│
+├── 📄 main.c                 # Application entry point
+│
+├── 🔐 Admin Module
+│   ├── admin.c               # Admin logic implementation
+│   └── admin.h               # Admin function declarations
+│
+├── 👤 Customer Module
+│   ├── customer.c            # Customer logic implementation
+│   └── customer.h            # Customer function declarations
+│
+├── 📦 Product Module
+│   ├── product.c             # Product management implementation
+│   └── product.h             # Product function declarations
+│
+├── 🛒 Cart & Order Module
+│   ├── cart.c                # Shopping cart operations
+│   ├── order.c               # Order processing and management
+│   └── transaction.h         # Transaction structures and declarations
+│
+├── 💳 Payment Module
+│   └── payment.c             # Payment processing (COD, Bkash, Nagad)
+│
+├── 🚚 Deliveryman Module
+│   ├── deliveryman.c         # Deliveryman operations
+│   └── deliveryman.h         # Deliveryman declarations
+│
+├── 🎨 UI Module
+│   └── ui.c                  # Console interface design
+│
+└── 📂 Data Files
+    ├── product.txt           # Product inventory database
+    ├── customer.txt          # Customer account information
+    ├── order.txt             # Order history and details
+    ├── feedback.txt          # Customer feedback records
+    ├── deliverymaninfo.txt   # Deliveryman credentials
+    └── about.txt             # Pharmacy information
+🔄 Data Flow Diagram
+text
+┌─────────────────────────────────────────────────────────────────┐
+│                       ZENPHARMA SYSTEM                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌─────────────┐    ┌──────────────┐    ┌──────────────────┐  │
+│  │   ADMIN     │───▶│   PRODUCT    │───▶│    INVENTORY     │  │
+│  │   PORTAL    │    │  MANAGEMENT  │    │    MANAGEMENT    │  │
+│  └─────────────┘    └──────────────┘    └──────────────────┘  │
+│         │                                                      │
+│         ▼                                                      │
+│  ┌─────────────┐    ┌──────────────┐    ┌──────────────────┐  │
+│  │  CUSTOMER   │───▶│    CART      │───▶│     ORDER        │  │
+│  │   PORTAL    │    │   MODULE     │    │    PROCESSING    │  │
+│  └─────────────┘    └──────────────┘    └──────────────────┘  │
+│         │                            │                         │
+│         │                            ▼                         │
+│         │               ┌──────────────────────────┐          │
+│         └──────────────▶│     PAYMENT SYSTEM       │          │
+│                         │  (COD, Bkash, Nagad)     │          │
+│                         └──────────────────────────┘          │
+│                                      │                         │
+│                         ┌────────────▼───────────────┐        │
+│  ┌─────────────────┐   │     DELIVERYMAN PORTAL     │        │
+│  │  FEEDBACK SYSTEM│   │  (Order Assignment &       │        │
+│  │   & REVIEWS     │   │   Status Updates)          │        │
+│  └─────────────────┘   └────────────────────────────┘        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+📂 Data Storage
+File Structure & Specifications
+File Name	Purpose	Format
+product.txt	Product inventory database	ID|Name|Category|Company|Description|Expiry|Price|Pack|Stock
+customer.txt	Customer account information	Name|Phone|Password
+order.txt	Order history and details	Multi-line receipt format
+feedback.txt	Customer feedback records	Structured feedback entries
+deliverymaninfo.txt	Deliveryman credentials	ID|Name|Phone|Password
+about.txt	Pharmacy information	Custom text format
+Data Persistence Features
+Automatic File Creation - Files are created if they don't exist
+
+Robust Error Handling - Comprehensive error checking for file operations
+
+Data Integrity - Transactional updates with temporary files
+
+Portability - Plain text format for easy backup and migration
+
+🚀 Getting Started
+Prerequisites
+Tool	Version	Purpose
+C Compiler	GCC 4.8+	Compiling source code
+Terminal/Command Prompt	Any	Running the application
+Git	Latest	Cloning the repository
+Installation & Setup
+1. Clone the Repository
+bash
+git clone https://github.com/DiptoChaklader/Group_Project.git
+cd Group_Project
+2. Compile the Project
+Using GCC:
+
+bash
+gcc -o zenpharma main.c admin.c customer.c product.c cart.c order.c payment.c deliveryman.c ui.c
+Using Make (if available):
 
-                    ┌─────────────┐
-                    │  CUSTOMER   │
-                    │    MENU     │
-                    └──────┬──────┘
-                           │
-     ┌─────────────────────┼─────────────────────┐
-     │                     │                     │
-┌────▼────┐         ┌─────▼─────┐         ┌────▼────┐
-│ BROWSE  │         │  SHOPPING │         │ ORDER & │
-│PRODUCTS │         │   CART    │         │PAYMENT  │
-└────┬────┘         └─────┬─────┘         └────┬────┘
-     │                     │                     │
-┌────▼────┐         ┌─────▼─────┐         ┌────▼────┐
-│product. │         │ checkout  │         │ order.  │
-│  txt    │         │  process  │         │  txt    │
-└─────────┘         └───────────┘         └─────────┘
-📊 Module Breakdown
-1. Main Module
-Application entry point and initialization
+bash
+make
+3. Run the Application
+bash
+./zenpharma        # On Linux/Mac
+zenpharma.exe      # On Windows
+🔑 Default Credentials
+Role	Username	Password
+Admin	admin	1234
+Deliveryman	1234 (Phone)	1234 (Password)
+📖 Usage Guide
+👤 Customer Workflow
+Browse Products
 
-Portal selection and routing logic
+Navigate through categories (MED/ACC/SKN/HH/CC)
 
-System exit and cleanup management
+View product details and pricing
 
-2. Admin Module
-Secure administrator authentication system
+Account Management
 
-Complete product lifecycle management (CRUD)
+Sign up with phone number and password
 
-System configuration and content administration
+Login to access personalized features
 
-Order and feedback monitoring
+Shopping Experience
 
-3. Customer Module
-Customer registration and secure authentication
+Search products by ID or name
 
-Product browsing and advanced search functionality
+Add products to cart
 
-Shopping cart operations and management
+Update quantity or remove items
 
-Order placement, tracking, and history
+Checkout Process
 
-Feedback submission system
+Enter delivery address (District, Area, House/Road)
 
-4. Deliveryman Module
-Delivery personnel authentication
+Choose payment method (COD, Bkash, Nagad)
 
-Order assignment and viewing system
+Confirm order and receive receipt
 
-Real-time status update management
+Post-Purchase
 
-Delivery tracking and reporting
+View order history
 
-5. Product Module
-Comprehensive inventory management
+Submit feedback and reviews
 
-Category-based organization system
+Track delivery status
 
-Stock tracking and updates
+🔐 Admin Workflow
+Product Management
 
-Advanced search and filter functionality
+Add new products with complete details
 
-6. Cart Module
-Shopping cart operations and persistence
+Update existing product information
 
-Dynamic quantity management
+Delete products from inventory
 
-Real-time price calculation
+Monitor and update stock levels
 
-Cart clearing and management
+Order Management
 
-7. Payment Module
-Multiple payment method integration
+View all customer orders
 
-Secure transaction processing
+Track order statuses
 
-Automated receipt generation
+Monitor delivery assignments
 
-Payment validation and verification
+System Administration
 
-8. Order Module
-Order creation and management
+Review customer feedback
 
-Complete order history tracking
+Update pharmacy information
 
-Receipt generation and formatting
+Manage system operations
 
-Order status tracking system
+🚚 Deliveryman Workflow
+Order Management
 
-9. UI Module
-Professional interface rendering
+View assigned orders
 
-Intuitive menu navigation
+Check delivery details
 
-Form display and input handling
+Update order status to DELIVERED
 
-Error message formatting
+Account Management
 
-🗂️ Data Management
-Data File Structure
-1. Product Database (product.txt)
+Secure login with credentials
 
-Stores complete product information
+Logout when finished
 
-Format: ID, Name, Category, Company, Description, Expiry, Price, Pack Size, Stock
+👥 Contributors
+Contributor	Role	Contact
+Dipto Chaklader	Lead Developer	GitHub
+Mustaqeem Mashfi	Developer	-
+📞 Contact
+Project Links
+GitHub Repository: https://github.com/DiptoChaklader/Group_Project
 
-Enables efficient inventory management
+Issues: Report an Issue
 
-2. Customer Database (customer.txt)
+Stars: Star this Project
 
-Stores customer account information
+Developer Contact
+Dipto Chaklader
 
-Format: Name, Phone Number, Password
+GitHub: @DiptoChaklader
 
-Enables secure authentication
+Email: dipto.chaklader@example.com
 
-3. Order Database (order.txt)
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Stores complete order records
+🙏 Acknowledgments
+SQUARE Pharmaceuticals - Product reference
 
-Includes product details, pricing, delivery info, and deliveryman assignment
+BEXIMCO Pharmaceuticals - Product reference
 
-Maintains full order history
+Incepta Pharmaceuticals - Product reference
 
-4. Feedback Database (feedback.txt)
+ACI Limited - Product reference
 
-Stores customer feedback and reviews
-
-Format: Customer Name, Phone, Feedback
-
-Enables quality improvement
-
-5. Deliveryman Database (deliverymaninfo.txt)
-
-Stores delivery personnel credentials
-
-Format: ID, Name, Phone, Password
-
-Enables secure deliveryman access
-
-6. About Page (about.txt)
-
-Stores pharmacy information and policies
-
-Plain text with professional formatting
-
-Dynamic content management
-
-🖥️ User Interface Design
-UI Design Principles
-Principle	Implementation
-Clarity	Clear hierarchy with ASCII art headers and structured layouts
-Consistency	Uniform menu structures and consistent navigation patterns
-Feedback	Immediate system responses with confirmation messages
-Efficiency	Numbered options for quick keyboard navigation
-Accessibility	Intuitive design suitable for all user skill levels
-Menu Hierarchy Structure
-Main Menu
-
-Admin Portal (Full system control)
-
-Customer Portal (Shopping experience)
-
-Deliveryman Portal (Order management)
-
-Exit
-
-Admin Portal
-
-Add Product
-
-View Products (Medicines, Accessories, Skin Care, Health & Hygiene, Child Care)
-
-Search Products
-
-Update Product
-
-Update Stock
-
-Delete Product
-
-View Feedback
-
-View Orders
-
-Edit About
-
-Logout
-
-Customer Portal
-
-Browse Products (Medicines, Accessories, Skin Care, Health & Hygiene, Child Care)
-
-About Pharmacy
-
-Order History
-
-View Cart
-
-Give Feedback
-
-Login
-
-Sign Up
-
-Logout
-
-Deliveryman Portal
-
-View Assigned Orders
-
-Update Order Status
-
-Logout
-
-Visual Design Elements
-Professional ASCII art branding
-
-Clean table formatting for data display
-
-Organized menu structures
-
-Password masking for security
-
-Scrollable content display
-
-Clear error and success messages
-
-Professional receipt formatting
-
-🚀 Quick Start Guide
-System Requirements
-Component	Minimum Requirements
-Operating System	Windows 7+, Linux, macOS
-Compiler	GCC 4.0+ or equivalent
-Memory	64 MB RAM
-Storage	10 MB free space
-Terminal	Command Prompt / Terminal
-Installation Process
-Step 1: Clone Repository
-Use Git to clone the project repository to your local machine.
-
-Step 2: Compile Source Code
-Compile all source files using GCC or your preferred C compiler to create the executable.
-
-Step 3: Run Application
-Execute the compiled program to launch ZenPharma.
-
-Step 4: Login
-Use the provided default credentials to access the system.
-
-Default Credentials
-Role	Username/Phone	Password	Access Level
-Administrator	admin	1234	Full System Access
-Customer	01234567890	mashfi	Shopping & Orders
-Deliveryman	1234	1234	Order Management
-👥 Team Members
-Development Team
-Name	Role	Responsibilities	GitHub
-Dipto Chaklader	Project Lead & Senior Developer	System Architecture, Core Module Development, Code Review & Optimization, Documentation	@DiptoChaklader
-Mustaqeem Mashfi	Developer & Quality Assurance	Feature Implementation, Testing & Bug Fixing, UI Design, Documentation	@Mashfi
-Project Statistics
-Metric	Value
-Development Time	4 Weeks
-Total Commits	50+
-Code Reviewers	2
-Test Cases	100+
-Documentation Pages	10+
-📞 Support & Contact
-Technical Support
-Channel	Contact Information
-Email	support@zenpharma.com
-Phone	+880 1234-567890
-GitHub	DiptoChaklader/Group_Project
-Issues	Report Bug via GitHub Issues
-Business Contact
-Channel	Contact Information
-Email	info@zenpharma.com
-Website	www.zenpharma.com
-Address	Dhaka, Bangladesh
-Working Hours	Mon-Sat: 8:00 AM - 10:00 PM
-📜 License & Legal
-MIT License
-The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology. It allows reuse of software with few restrictions.
-
-Key Permissions:
-
-Commercial use
-
-Modification
-
-Distribution
-
-Private use
-
-Key Limitations:
-
-Liability
-
-Warranty
-
-Key Conditions:
-
-License and copyright notice must be included
-
-Disclaimer
-ZenPharma is a demonstration project created for educational and portfolio purposes. The system is not intended for actual commercial use without proper security audits, data protection measures, and compliance with relevant regulations. Users are responsible for implementing appropriate security measures for production deployment.
-
-🔄 Version History
-Version	Date	Changes
-2.0.0	2024	Complete code restructure, Enhanced UI design, Added payment methods, Improved error handling
-1.0.0	2023	Initial release, Core features implemented, Basic UI design, File-based storage
-🏆 Acknowledgments
-Special Thanks
-Bangladesh University of Business & Technology - Academic support and guidance
-
-Open Source Community - Inspiration, resources, and best practices
-
-All Contributors - For their valuable time, feedback, and suggestions
-
-Resources Used
-C Programming Language - ANSI C99 Standard
-
-GCC Compiler - GNU Compiler Collection
-
-Git - Version Control System
-
-GitHub - Collaborative Development Platform
+All Contributors - For their valuable contributions
 
 <div align="center">
-💖 ZenPharma
-Your Health, Our First Priority
-Made with ❤️ by the ZenPharma Team
+🌟 ZenPharma - Your Health, Our Priority 🌟
+Developed with ❤️ using C
 
-⬆ Back to Top
+Back to Top
 
 </div>
