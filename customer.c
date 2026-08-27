@@ -654,8 +654,8 @@ int customer_view_product(char category[]){
             default:
                 invalid_item_choice();
                 printf("\n                                                              Invalid Choice.\n");
-                printf("                                                             Press Enter To Continue");
-                getchar();
+                printf("                                                             Press Enter To Continue  ");
+                getchar();                                                                    
                 break;
         }
     return 1;
