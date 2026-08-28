@@ -90,7 +90,8 @@ int view_cart(){
         printf("                                                                                 | 4. Checkout                |\n");
         printf("                                                                                 | 5. Back                    |\n");
         printf("                                                                                 +============================+\n");
-        printf("\n                                                                                   Enter Your Choice : ");
+        printf("                                                                                                               \n");    
+        printf("                                                                                     Enter Your Choice : ");
         scanf("%d",&choice);
         getchar();
 
