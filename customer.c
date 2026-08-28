@@ -16,64 +16,61 @@ Customer current_customer;
 int customer_menu(){   
     int choice;
     while(1)
-    {   
+        {   
         
-        int choice;
-        system("cls");
+            int choice;
+            system("cls");
 
-        if(is_logged_in == 0)
-            {
-                Print_Customer_Main_Page_When_Not_Logged_In();
-            }
-        else
-            {
-                Print_Customer_Main_Page_When_Logged_In();
-            }
+            if(is_logged_in == 0)
+                {
+                    Print_Customer_Main_Page_When_Not_Logged_In();
+                }
+            else
+                {
+                    Print_Customer_Main_Page_When_Logged_In();
+                }
 
-        scanf("%d", &choice);
-        getchar();
+            scanf("%d", &choice);
+            getchar();
 
-        switch(choice)
-        {
-            case 1:
-            {
-                int choice;
-                while(1)
-                    {   
-                        Print_Medicine_page();
-                        scanf("%d",&choice);
-                        getchar();
+            switch(choice)
+                {
+                    case 1:
+                        {
+                            int choice;
+                            while(1)
+                                {   
+                                    Print_Medicine_page();
+                                    scanf("%d",&choice);
+                                    getchar();
 
-                        switch(choice)
-                            {
-                                case 1:
-                                    system("cls");
-                                    customer_view_product("MED");
+                                    switch(choice)
+                                        {
+                                            case 1:
+                                                system("cls");
+                                                customer_view_product("MED");
+                                                break;
+
+                                            case 2:
+                                                system("cls");
+                                                customer_search_product("MED");
+                                                break;
+
+                                            case 3:
+                                                break;
+
+                                            default:
+                                                invalid_item_choice();
+                                        }
+
+                                        if(choice==3)
+                                            break;
+                                }
                                     break;
+                        }
 
-                                case 2:
-                                    system("cls");
-                                    customer_search_product("MED");
-                                    break;
-
-                                case 3:
-                                    break;
-
-                                default:
-                                    invalid_item_choice();
-                            }
-
-                                if(choice==3)
-                                    break;
-                    }
-
-                                break;
-            }
-
-                
-
-            case 2:
-            {
+                    case 2:
+                        {
                             int choice;
 
                             while(1)
@@ -109,9 +106,8 @@ int customer_menu(){
                         }
 
 
-            case 3:
-                
-            {
+                    case 3:
+                        {
                             int choice;
                             while(1)
                             {   
@@ -145,11 +141,9 @@ int customer_menu(){
                             break;
                         }
 
-            case 4:
-               
-            {
+                    case 4:
+                        {
                             int choice;
-
                             while(1)
                             {   
                                 Print_Health_And_Hygiene_Products();
@@ -181,9 +175,8 @@ int customer_menu(){
                         }
 
 
-            case 5:
-               
-            {
+                    case 5:
+                        {
                             int choice;
 
                             while(1)
@@ -219,120 +212,118 @@ int customer_menu(){
                             }
 
 
-            case 6:
-                    system("cls");
-                    about_pharmacy();
-                    break;
+                    case 6:
+                        system("cls");
+                        about_pharmacy();
+                        break;
 
-            case 7:
-                    if(is_logged_in==1)
-                {
-                    view_order_history();
-                }
-                else
-                {
-                    printf("                                                                                     Please Login First\n");
-                    printf("                                                                          Please press Enter to go back to the Customer Menu");
-                    getchar();
-                }
-
-                    break;
-
-
-            case 8:
-               if(is_logged_in==1)
-                {   
-                    system("cls");
-                    view_cart();
-                }
-                else
-                {   
-                    system("cls");
-                    printf("                                                                               +======================================+\n");
-                    printf("                                                                               |     Please Login Or Signup First     |\n");
-                    printf("                                                                               +======================================+\n");
-                    printf("                                                                          Please press Enter to go back to the Customer Menu");
-                    getchar();
-                }
-       
-                    break;
+                    case 7:
+                        if(is_logged_in==1)
+                            {
+                                view_order_history();
+                            }
+                                else
+                            {
+                                printf("                                                                                     Please Login First\n");
+                                printf("                                                                          Please press Enter to go back to the Customer Menu");
+                                getchar();
+                            }
+                            break;
 
 
-            case 9:
-                if(is_logged_in==1)
-                {
-                    feedback();
-                }
-                else
-                {
-                    printf("                                                                                     Please Login First\n");
-                    printf("                                                                          Please press Enter to go back to the Customer Menu");
-                    getchar();
-                }  
-                    break;
-                
+                    case 8:
+                        if(is_logged_in==1)
+                            {   
+                                system("cls");
+                                view_cart();
+                            }
+                        else
+                            {   
+                                system("cls");
+                                printf("                                                                               +======================================+\n");
+                                printf("                                                                               |     Please Login Or Signup First     |\n");
+                                printf("                                                                               +======================================+\n");
+                                printf("                                                                          Please press Enter to go back to the Customer Menu");
+                                getchar();
+                            }
+                            break;
 
 
-            case 10:
+                    case 9:
+                        if(is_logged_in==1)
+                            {
+                                feedback();
+                            }
+                        else
+                            {
+                                printf("                                                                                     Please Login First\n");
+                                printf("                                                                          Please press Enter to go back to the Customer Menu");
+                                getchar();
+                            }  
+                        break;
 
-                if(is_logged_in == 0)
-                {   system("cls");
-                    customer_login();
-                }
-            else
-            {
-                system("cls");
-                printf("                                                                                         You Are Already Logged In\n");
-                printf("                                                                          Please press Enter to go back to the Customer Menu");
-                getchar();
-                
-            }
-                break;
 
-            case 11:
-            if(is_logged_in == 0)
-                {   
-                    system("cls");
-                    customer_signup();
+                    case 10:
+                        if(is_logged_in == 0)
+                            {   
+                                system("cls");
+                                customer_login();
+                            }
+                        else
+                            {
+                                system("cls");
+                                printf("                                                                                         You Are Already Logged In\n");
+                                printf("                                                                          Please press Enter to go back to the Customer Menu");
+                                getchar();
+                            } 
+                        break;
 
-                }
-            else
-            {
-                system("cls");
-                printf("                                                                                         You Are Already Logged In\n");
-                printf("                                                                          Please press Enter to go back to the Customer Menu");
-                getchar();
-            }
-            break;
 
-            case 12:
-            system("cls");
-                if (customer_logout()==1)
-                {
-                    return 0;
-                }
-                
+                    case 11:
+                        if(is_logged_in == 0)
+                            {   
+                                system("cls");
+                                customer_signup();
+                            }
+                        else
+                            {
+                                system("cls");
+                                printf("                                                                                         You Are Already Logged In\n");
+                                printf("                                                                          Please press Enter to go back to the Customer Menu");
+                                getchar();
+                            }
+                        break;
 
-            case 0:
-                return 1;
 
-            default:
-                invalid_item_choice();
+                    case 12:
+                        system("cls");
+                        if (customer_logout()==1)
+                            {
+                                return 0;
+                            }
+
+
+                    case 0:
+                        return 1;
+
+
+                    default:
+                        invalid_item_choice();
         }
     }
 }
 
 int about_pharmacy(){
-        FILE *fp;
-        char line[300];
-        fp = fopen("about.txt", "r");
-        if(fp == NULL)
-            {
-                printf("                                                                                        +===============================================+\n");
-                printf("                                                                                        |    About Pharmacy Information Not Available   |\n");
-                printf("                                                                                        +===============================================+\n");
-                return 0;
-            }
+    FILE *fp;
+    char line[300];
+    fp = fopen("about.txt", "r");
+    if(fp == NULL)
+        {
+            printf("                                                                                        +===============================================+\n");
+            printf("                                                                                        |    About Pharmacy Information Not Available   |\n");
+            printf("                                                                                        +===============================================+\n");
+            return 0;
+        }
     printf("\n");
 
     while(fgets(line, sizeof(line), fp))
@@ -347,41 +338,41 @@ int about_pharmacy(){
 }
 
 int create_customer_file(){
-        FILE *fp;
+    FILE *fp;
 
-        fp = fopen("customer.txt", "r");
-            if(fp != NULL)
-            {
-                fclose(fp);
-                return 1;
-            }
+    fp = fopen("customer.txt", "r");
+    if(fp != NULL)
+        {
+            fclose(fp);
+            return 1;
+        }
 
-        fp = fopen("customer.txt", "w");
-            if(fp == NULL)
-            {
-                printf("Error : %s\n", strerror(errno));
-                return 0;
-            }
+    fp = fopen("customer.txt", "w");
+    if(fp == NULL)
+        {
+            printf("Error : %s\n", strerror(errno));
+            return 0;
+        }
+    
     fclose(fp);
-
     return 1;
 }
 
 int customer_exists(char phone[]){
-        FILE *fp;
+    FILE *fp;
 
-        Customer customer;
-        char line[200];
+    Customer customer;
+    char line[200];
 
-        fp = fopen("customer.txt", "r");
-            if(fp == NULL)
-            {
-                printf("Error : %s\n", strerror(errno));
-                return 0;
-            }
+    fp = fopen("customer.txt", "r");
+    if(fp == NULL)
+        {
+            printf("Error : %s\n", strerror(errno));
+            return 0;
+        }
 
     while(fgets(line, sizeof(line), fp))
-    {
+        {
             if(sscanf(line,"%29[^|]|%11[^|]|%29[^\n]", customer.name, customer.phone, customer.password) != 3)
             {
                 continue;
@@ -400,7 +391,7 @@ int customer_exists(char phone[]){
                 fclose(fp);
                 return 1;
             }
-    }
+        }
     fclose(fp);
     return 0;
 }
@@ -419,11 +410,11 @@ int input_password(char password[]){
 
             else if(ch == '\b') 
             {
-                    if(i > 0)
-                {
-                    i--;
-                    printf("\b \b");
-                }
+                if(i > 0)
+                    {
+                        i--;
+                        printf("\b \b");
+                    }
             }
 
             else if(i < 29)
@@ -566,41 +557,42 @@ int customer_login(){
 }
 
 int customer_view_product(char category[]){
-        int choice;
-        FILE *fp;
-        Product product;
-        char line[300];
-        int found = 0;
-        fp = fopen("product.txt", "r");
-            if(fp == NULL)
-            {
-                printf("Error : %s\n", strerror(errno));
-                return 0;
-            }
+    int choice;
+    FILE *fp;
+    Product product;
+
+    char line[300];
+    int found = 0;
+
+    fp = fopen("product.txt", "r");
+    if(fp == NULL)
+    {
+        printf("Error : %s\n", strerror(errno));
+        return 0;
+    }
 
     printf("\n");
     printf("                                                     +=====================================================================================+\n");
     printf("                                                     | %-12s | %-20s | %-15s | %-12s | %-12s |\n",
-           "ID",
-           "Name",
-           "Company",
-           "Price/Pack",
-           "Stock");
+            "ID",
+            "Name",
+            "Company",
+            "Price/Pack",
+            "Stock");
     printf("                                                     +=====================================================================================+\n");
 
     while(fgets(line, sizeof(line), fp))
     {
-        if(sscanf(line,
-                  "%d|%29[^|]|%29[^|]|%29[^|]|%49[^|]|%14[^|]|%f|%d|%d",
-                  &product.id,
-                  product.name,
-                  product.category,
-                  product.company,
-                  product.description,
-                  product.expiry_date,
-                  &product.price,
-                  &product.pack_size,
-                  &product.stock) != 9)
+        if(sscanf(line,"%d|%29[^|]|%29[^|]|%29[^|]|%49[^|]|%14[^|]|%f|%d|%d",
+                    &product.id,
+                    product.name,
+                    product.category,
+                    product.company,
+                    product.description,
+                    product.expiry_date,
+                    &product.price,
+                    &product.pack_size,
+                    &product.stock) != 9)
         {
             continue;
         }
@@ -608,11 +600,11 @@ int customer_view_product(char category[]){
         if(strcmp(product.category, category) == 0)
         {
             printf("                                                     | %-12d | %-20s | %-15s | %-12.2f | %-12d |\n",
-                   product.id,
-                   product.name,
-                   product.company,
-                   product.price,
-                   product.stock);
+                    product.id,
+                    product.name,
+                    product.company,
+                    product.price,
+                    product.stock);
 
             found = 1;
         }
@@ -820,8 +812,7 @@ int customer_product_details(Product product){
     }
 }
 
-int feedback()
-{
+int feedback(){
     FILE *fp;
     char feedback[300];
 
@@ -844,18 +835,14 @@ int feedback()
     printf("                                                  Enter Your Feedback : ");
 
     fgets(feedback,sizeof(feedback),stdin);
-
     feedback[strcspn(feedback, "\n")] = '\0';
 
     if(strlen(feedback) == 0)
     {
         printf("                                              Feedback Cannot Be Empty\n");
-
         fclose(fp);
-
         printf("                                              Press Enter To Continue");
         getchar();
-
         return 0;
     }
 
@@ -873,9 +860,6 @@ int feedback()
 
     return 1;
 }
-
-
-
 
 int customer_logout(){
     is_logged_in = 0;
