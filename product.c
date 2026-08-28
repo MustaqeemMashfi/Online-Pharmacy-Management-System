@@ -505,16 +505,19 @@ int update_product(){
     fclose(fp);
     fclose(temporary);
 
-    remove("product.txt");
-    rename("temporary.txt","product.txt");
+    
 
     if(found==1){
+        remove("product.txt");
+        rename("temporary.txt","product.txt");
+
         printf("                                                                            +=========================================+\n\n");
         printf("                                                                            +=========================================+\n");
         printf("                                                                            |      Product Updated Successfully       |\n");
         printf("                                                                            +=========================================+\n");
     }
     else{
+                remove("temporary.txt");
                 printf("\n                                                                               Product Not Found.\n");
         }
 
@@ -601,11 +604,13 @@ int delete_product(){
     fclose(fp);
     fclose(temporary);
 
-    remove("product.txt");
-    rename("temporary.txt", "product.txt");
+    
 
     if(found==1)
-        {
+        {   
+            remove("product.txt");
+            rename("temporary.txt", "product.txt");
+
             printf("                                                                            +=========================================+\n\n");
             printf("                                                                            +=========================================+\n");
             printf("                                                                            |      Product Deleted Successfully       |\n");
@@ -613,6 +618,7 @@ int delete_product(){
         }
     else
         {
+            remove("temporary.txt");
             printf("\nProduct Not Found.\n");
         }
 
@@ -703,16 +709,20 @@ int update_stock(){
     fclose(fp);
     fclose(temporary);
 
-    remove("product.txt");
-    rename("temporary.txt", "product.txt");
+    
 
    if(found==1){
+
+        remove("product.txt");
+        rename("temporary.txt", "product.txt");
+
         printf("                                                                            +=========================================+\n\n");
         printf("                                                                            +=========================================+\n");
         printf("                                                                            |    Product Stock Updated Successfully   |\n");
         printf("                                                                            +=========================================+\n");
                 }
-    else{
+
+    else{       remove("temporary.txt"); 
                 printf("\n                                                                            Product Not Found.\n");
         }
 
