@@ -266,7 +266,7 @@ int clear_cart(){
             return 0;
 
         }
-        printf("                                                 +========================================================+"\n);
+        printf("                                                 +========================================================+\n");
         printf("                                                      Are You Sure You Want To Clear The Cart? (Y/N) : ");
         scanf(" %c", &choice);
         getchar();
