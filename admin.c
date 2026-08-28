@@ -16,11 +16,11 @@ int  admin_login(){
     printf("                                                           |                    Welcome to ZenPharma Admin Login System                        |\n");
     printf("                                                           |                                                                                   |\n");
     printf("                                                           +===================================================================================+\n");
-    printf("                                                           |                                                                                   \n");
+    printf("                                                           |                                                                                   |\n");
     printf("                                                           | Enter Username : ");
     scanf("%s",username);
     getchar();
-    printf("                                                           |                                                                                   \n");
+    printf("                                                           |                                                                                   |\n");
     printf("                                                           | Enter Password : ");
     input_password(password);
     printf("                                                           |                                                                                   |\n");
@@ -295,7 +295,7 @@ int admin_view_orders(){
         printf("                                                                 +========================================+\n");
         printf("                                                                 |             No Orders Found            |\n");
         printf("                                                                 +========================================+\n");
-        printf("                                               Press Enter To Continue");
+        printf("                                                       Press Enter To Continue");
         getchar();
         return 0;
     }
@@ -312,7 +312,7 @@ int admin_view_orders(){
     }
 
     fclose(fp);
-    printf("                           Press Enter To Continue");
+    printf("                                                       Press Enter To Continue");
     getchar();
     return 1;
 }          
