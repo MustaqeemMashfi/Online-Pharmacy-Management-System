@@ -146,6 +146,8 @@ int update_cart_quantity(){
 
     if(id == 0)
     {
+        printf("Please press Enter to continue.");
+        getchar();    
         return 0;
     }
         
