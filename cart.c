@@ -71,12 +71,12 @@ int view_cart(){
         for(i = 0; i < cart_count; i++)
         {
             printf("                                                 | %-8d %-25s %-12.2f %-10d %-12.2f                                     |\n",
-                    cart[i].product.id,
-                    cart[i].product.name,
-                    cart[i].product.price,
-                    cart[i].quantity,
-                    cart[i].product.price * cart[i].quantity);
-            total += cart[i].product.price * cart[i].quantity;
+                      cart[i].product.id,
+                      cart[i].product.name,
+                      cart[i].product.price,
+                      cart[i].quantity,
+                      cart[i].product.price * cart[i].quantity);
+                      total += cart[i].product.price * cart[i].quantity;
         }
 
         printf("                                                 +-------------------------------------------------------------------------------------------------------------+\n");
