@@ -823,30 +823,24 @@ int customer_product_details(Product product){
 int feedback()
 {
     FILE *fp;
-
     char feedback[300];
 
     fp = fopen("feedback.txt", "a");
-
     if(fp == NULL)
     {
         printf("Error: %s", strerror(errno));
         printf("Press Enter To Continue");
         getchar();
-
         return 0;
     }
 
     system("cls");
-
     printf("\n");
     printf("                                                  =========================================\n");
     printf("                                                              GIVE FEEDBACK\n");
     printf("                                                  =========================================\n");
-
     printf("                                                  Customer Name : %s\n", current_customer.name);
     printf("                                                  Phone Number  : %s\n", current_customer.phone);
-
     printf("                                                  Enter Your Feedback : ");
 
     fgets(feedback,sizeof(feedback),stdin);
@@ -866,23 +860,15 @@ int feedback()
     }
 
     fprintf(fp,"=============================================================\n");
-
-    fprintf(fp,
-            "Customer Name : %s\n",current_customer.name);
-
+    fprintf(fp, "Customer Name : %s\n",current_customer.name);
     fprintf(fp,"Phone Number  : %s\n",current_customer.phone);
-
     fprintf(fp,"Feedback      : %s\n",feedback);
-
     fprintf(fp,"=============================================================\n");
-
     fprintf(fp, "\n");
-
     fclose(fp);
 
     printf("                                                  Feedback Submitted Successfully\n");
-
-    printf("Press Enter To Continue");
+    printf("                                                      Press Enter To Continue");
     getchar();
 
     return 1;
