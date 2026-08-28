@@ -1,89 +1,112 @@
+#include <stdio.h>
 
-# Group_Project
+int main()
+{
+    printf("Group_Project\n");
+    printf("+===============+\n");
+    printf("ZenPharma - Online Pharmacy Management System\n");
+    printf("+============================================+");
+    printf("About ZenPharma\n");
+    printf("ZenPharma is a comprehensive Console-Based Pharmacy Management System developed in C. It provides a complete\n");
+    printf("solution for managing an online pharmacy with three distinct user portals:\n");
+    printf("\n");
+    printf("1.Admin Portal – Full control over products, orders, and pharmacy information\n");
+    printf("2.Customer Portal – Browse products, manage cart, place orders, and give feedback\n");
+    printf("3.Deliveryman Portal – View assigned orders and update delivery status\n");
+    printf("\n");
+    printf("This project demonstrates fundamental concepts of file handling, data structures, user authentication, and transaction\n");
+    printf("management in C programming.\n");
+    printf("\n");
+    printf("+==========================================================================================================================+\n");
+    printf("                                             Features\n");
+    printf("  +===============================================================================================+\n");
+    printf(" /                                          Admin Portal                                          \\n");
+    printf("+=================================================================================================+\n");
+    printf("|     Feature      |                                  Description                                 |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  Add Product     |  Add new medicines, accessories, skincare, hygiene, and child care products  |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  View Products   |  Browse products by category (MED/ACC/SKN/HH/CC)                             |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  Search Products |  Search by product ID or name                                                |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  Update Product  |  Modify existing product details                                             |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  Update Stock	   |  Adjust product stock levels                                                 |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  Delete Product  |  Remove products from inventory                                              |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  View Feedback   |  Read all customer feedback                                                  |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  View Orders	   |  See all placed orders                                                       |\n");
+    printf("+=================================================================================================+\n");
+    printf("|  Edit About	   |  Update pharmacy information page                                            |\n");
+    printf("+=================================================================================================+\n");
+    printf("                                                              \n");
+    printf("                       Customer Portal                        \n");
+    printf("+============================================================+\n");
+    printf("|  Feature	          |  Description                         |\n");
+    printf("+============================================================+\n");
+    printf("|  Browse Products	  |  View products by category           |\n");
+    printf("+============================================================+\n");
+    printf("|  Search Products    |  Find products by ID or nam          |\n");
+    printf("+============================================================+\n");
+    printf("|  Add to Cart        |  Add products to shopping cart       |\n");
+    printf("+============================================================+\n");
+    printf("|  Update Cart	      |  Change quantity or remove items     |\n");
+    printf("+============================================================+\n");
+    printf("|  Checkout	          |  Place orders with delivery address  |\n");
+    printf("+============================================================+\n");
+    printf("|  Multiple Payments  |	 Cash on Delivery, Bkash, Nagads     |\n");
+    printf("+============================================================+\n");
+    printf("|  Order History      |	 View past orders                    |\n");
+    printf("+============================================================+\n");
+    printf("|  Give Feedback	  |  Submit reviews and suggestions      |\n");
+    printf("+============================================================+\n");
+    printf("|  About Pharmacy	  |  View pharmacy information           |\n");
+    printf("+============================================================+\n");
+    printf("                                                         \n");
+    printf("                    Deliveryman Portal                   \n");
+    printf("+=======================================================+\n");
+    printf("|  Feature	            |   Description                 |\n");
+    printf("+=======================================================+\n");
+    printf("|  View Assigned Orders	|  See orders assigned to you   |\n");
+    printf("+=======================================================+\n");
+    printf("|  Update Order Status	|  Mark orders as DELIVERED     |\n");
+    printf("+=======================================================+\n");
+    printf("|  Logout	            |  Secure logout                |\n");
+    printf("+=======================================================+\n");
+    printf("\n");
+    printf("Data Storage\n");
+    printf("All data is stored in plain text files for simplicity and portability:\n");
+    printf("+=========================================================+\n");
+    printf("|  File Name	        |  Purpose                        |\n");
+    printf("+=========================================================+\n");
+    printf("|  product.txt	        |  Product inventory database     |\n");
+    printf("+=========================================================+\n");
+    printf("|  customer.txt	        |  Customer account information   |\n");
+    printf("+=========================================================+\n");
+    printf("|  order.txt	        |  Order history and details      |\n");
+    printf("+=========================================================+\n");
+    printf("|  feedback.txt	        |  Customer feedback records      |\n");
+    printf("+=========================================================+\n");
+    printf("|  deliverymaninfo.txt	|  Deliveryman credentials        |\n");
+    printf("+=========================================================+\n");
+    printf("|  about.txt            |  Pharmacy information           |\n");
+    printf("+=========================================================+\n");
+    printf("\n");
+    printf("Getting Started\n");
+    printf("\n");
+    printf("Prerequisite\n");
+    printf("\n");
+    printf("1.C Compiler (GCC recommended)\n");
+    printf("2.Terminal/Command Prompt\n");
+    printf("3.Git (for cloning)\n");
+    printf("\n");
+    printf("Installation\n");
+    printf("\n");
+    printf("1.Clone the repository\n");
+    printf("git clone https://github.com/DiptoChaklader/Group_Project.gitcd Group_Project\n");
 
-# ZenPharma - Online Pharmacy Management System
-
-[![GitHub repo size](https://img.shields.io/github/repo-size/DiptoChaklader/Group_Project)](https://github.com/DiptoChaklader/Group_Project)
-[![GitHub contributors](https://img.shields.io/github/contributors/DiptoChaklader/Group_Project)](https://github.com/DiptoChaklader/Group_Project)
-[![GitHub stars](https://img.shields.io/github/stars/DiptoChaklader/Group_Project)](https://github.com/DiptoChaklader/Group_Project)
-
-## 🏥 About ZenPharma
-
-**ZenPharma** is a comprehensive **Console-Based Pharmacy Management System** developed in C. It provides a complete solution for managing an online pharmacy with three distinct user portals:
-
-- **Admin Portal** – Full control over products, orders, and pharmacy information
-- **Customer Portal** – Browse products, manage cart, place orders, and give feedback
-- **Deliveryman Portal** – View assigned orders and update delivery status
-
-This project demonstrates fundamental concepts of **file handling**, **data structures**, **user authentication**, and **transaction management** in C programming.
-
----
-
-## ✨ Features
-
-### 🔐 Admin Portal
-| Feature | Description |
-|---------|-------------|
-| **Add Product** | Add new medicines, accessories, skincare, hygiene, and child care products |
-| **View Products** | Browse products by category (MED/ACC/SKN/HH/CC) |
-| **Search Products** | Search by product ID or name |
-| **Update Product** | Modify existing product details |
-| **Update Stock** | Adjust product stock levels |
-| **Delete Product** | Remove products from inventory |
-| **View Feedback** | Read all customer feedback |
-| **View Orders** | See all placed orders |
-| **Edit About** | Update pharmacy information page |
-
-### 🛒 Customer Portal
-| Feature | Description |
-|---------|-------------|
-| **Browse Products** | View products by category |
-| **Search Products** | Find products by ID or name |
-| **Add to Cart** | Add products to shopping cart |
-| **Update Cart** | Change quantity or remove items |
-| **Checkout** | Place orders with delivery address |
-| **Multiple Payments** | Cash on Delivery, Bkash, Nagad |
-| **Order History** | View past orders |
-| **Give Feedback** | Submit reviews and suggestions |
-| **About Pharmacy** | View pharmacy information |
-
-### 🚚 Deliveryman Portal
-| Feature | Description |
-|---------|-------------|
-| **View Assigned Orders** | See orders assigned to you |
-| **Update Order Status** | Mark orders as DELIVERED |
-| **Logout** | Secure logout |
-
----
-
-## 🗂️ Data Storage
-
-All data is stored in **plain text files** for simplicity and portability:
-
-| File Name | Purpose |
-|-----------|---------|
-| `product.txt` | Product inventory database |
-| `customer.txt` | Customer account information |
-| `order.txt` | Order history and details |
-| `feedback.txt` | Customer feedback records |
-| `deliverymaninfo.txt` | Deliveryman credentials |
-| `about.txt` | Pharmacy information |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **C Compiler** (GCC recommended)
-- **Terminal/Command Prompt**
-- **Git** (for cloning)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/DiptoChaklader/Group_Project.git
-   cd Group_Project
-
-
+    return 0;
+}
