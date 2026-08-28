@@ -849,27 +849,3 @@ int reduce_product_stock()
 
     return 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
